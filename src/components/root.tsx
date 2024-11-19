@@ -117,9 +117,10 @@ function RootInner({ children }: PropsWithChildren) {
     // Unfortunately, Telegram Mini Apps does not allow us to use all features of the Server Side
     // Rendering. That's why we are showing loader on the server side.
     const didMount = useDidMount();
+    const router = useRouter()
    if(didMount){
     const [backButton] = initBackButton()
-    const router = useRouter()
+   
     backButton.show()
     backButton.on('click',()=> router.back())
    }
